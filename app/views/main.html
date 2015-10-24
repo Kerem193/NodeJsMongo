@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="testApp">
+<head>
+  <meta charset="utf-8">
+  <title>Test App</title>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../css/app.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="../js/student.js"></script>
+
+</head>
+<body>
+<div ng-controller="studentanlegenCtrl">
+  <div class="view-container">
+   
+      <h1>Student anlegen</h1>
+        Name: <input type="text" ng-model="name"></input>
+        Matrikelnummer: <input type="number" ng-model="mnr"></input>
+        E-Mail: <input type="email" ng-model="email"></input>
+        Geburtsdatum: <input type="date" ng-model="gdatum"></input>
+        Abi-Note: <input type="number" ng-model="note" min="1" max="5"></input>
+      <input type="button" value="Abschicken" ng-click="abschicken()"></input>
+  </div>
+    <div>
+
+        <input type="button" value="Gib mir den Studenten mit bester Note" ng-click="holen()"></input>
+        {{besterStudent}}
+    </div>
+</div>
+</body>
+</html>
